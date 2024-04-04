@@ -194,8 +194,8 @@
               }
           },
           "goals": {
-              "home": null,
-              "away": null
+              "home": 3,
+              "away": 1
           },
           "score": {
               "halftime": {
@@ -262,8 +262,8 @@
               }
           },
           "goals": {
-              "home": null,
-              "away": null
+              "home": 1,
+              "away": 4
           },
           "score": {
               "halftime": {
