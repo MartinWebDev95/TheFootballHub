@@ -4,7 +4,7 @@ import Link from 'next/link'
 const NavItem = ({ item }) => {
   return (
     <li>
-      <Link href={item.href} className='flex items-center gap-1.5'>
+      <Link href={item.href} className='flex flex-col justify-between sm:flex-row items-center gap-1.5 text-sm lg:text-base'>
         <Image 
           width={24} 
           height={24} 

@@ -9,10 +9,10 @@ const MatchTeam = ({ team }) => {
         width={70} 
         height={70} 
         alt={team.name}
-        className="mx-auto"
+        className="mx-auto w-12 h-12 md:w-16 md:h-16"
       />
 
-      <p className="font-semibold uppercase mt-2">{team.name}</p>
+      <p className="font-semibold uppercase mt-2 text-sm md:text-base">{team.name}</p>
     </div>
   )
 }

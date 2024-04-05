@@ -1,43 +1,44 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const StandingTablePreview = ({ standing, league }) => {
   return (
-    <div className='bg-sky-500 p-3 rounded-lg shadow-lg'>
-      <table className="table-auto border-separate border-spacing-2">
-        <caption class="caption-top font-semibold">
+    <>
+      <table className="table-auto border-separate border-spacing-2 w-full h-full">
+        <caption className="caption-top font-semibold">
           {`Standing ${league.name}`}
         </caption>
         <thead>
           <tr>
             <th></th>
             <th></th>
-            <th>PG</th>
-            <th>W</th>
-            <th>D</th>
-            <th>L</th>
-            <th>PTS</th>
+            <th className='text-right text-sm md:text-base'>PG</th>
+            <th className='text-right text-sm md:text-base'>W</th>
+            <th className='text-right text-sm md:text-base'>D</th>
+            <th className='text-right text-sm md:text-base'>L</th>
+            <th className='text-right text-sm md:text-base'>PTS</th>
           </tr>
         </thead>
 
         <tbody>
           {
             standing.map((item) => (
-              <tr key={item.team?.id} className='mt-2'>
-                <td>{item.rank} -</td>
-                <td className="flex items-center gap-1">
+              <tr key={item.team?.id} className='mt-2 w-full'>
+                <td className='text-center'>
+                  {item.rank}
+                </td>
+                <td className="flex items-center gap-1 justify-start">
                   <Image width={24} height={24} src={item.team.logo} alt={item.team.name} />
 
-                  <span className='font-semibold'>
+                  <span className='font-medium text-sm md:text-base'>
                     {item.team.name}
                   </span>
                 </td>
-                <td>{item.all.played}</td>
-                <td>{item.all.win}</td>
-                <td>{item.all.draw}</td>
-                <td>{item.all.lose}</td>
-                <td>{item.points}</td>
+                <td className='text-right text-sm md:text-base'>{item.all.played}</td>
+                <td className='text-right text-sm md:text-base'>{item.all.win}</td>
+                <td className='text-right text-sm md:text-base'>{item.all.draw}</td>
+                <td className='text-right text-sm md:text-base'>{item.all.lose}</td>
+                <td className='text-right text-sm md:text-base'>{item.points}</td>
               </tr>
             ))
           }
@@ -46,11 +47,11 @@ const StandingTablePreview = ({ standing, league }) => {
 
       <Link 
         href={league.name === 'Premier League' ? '/premier-league/standing' : '/la-liga/standing'} 
-        className='text-right w-full block mt-2 font-bold'
+        className='w-fit mt-2 font-bold text-sm md:text-base'
       >
         See more
       </Link>
-    </div>
+    </>
   )
 }
 

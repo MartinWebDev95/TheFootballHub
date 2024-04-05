@@ -1,17 +1,25 @@
 import { getMatchDate } from '@/utils/getMatchDate'
 import MatchTeam from './MatchTeam'
 
-const Match = ({ match }) => {
+const Match = ({ match, matchRef, idMatch }) => {
   return (
-    <div className="flex items-center justify-around min-w-full">
+    <div ref={matchRef} data-id={idMatch} className="flex items-center justify-around min-w-full bg-black/60 py-4 px-2 md:px-0">
       <MatchTeam team={match.teams.home} />
 
       <div className="w-full">
         <p className="text-center mb-1 text-sm">{match.fixture.venue.name}</p>
         {
           match.goals.home === null ? (
-            <p className="text-center">
-              {getMatchDate({ matchDate: match.fixture.date })}
+            <p className="text-center text-sm flex flex-col gap-1">
+              <span className='hidden md:block'>
+                {getMatchDate({ matchDate: match.fixture.date })}
+              </span>
+              <span className='md:hidden'>
+                {getMatchDate({ matchDate: match.fixture.date }).split('-')[0]}
+              </span>              
+              <span className='md:hidden'>
+                {getMatchDate({ matchDate: match.fixture.date }).split('-')[1]}
+              </span>
             </p>
           ) : (
             <p className="text-4xl flex justify-center items-center gap-2">
