@@ -2,7 +2,11 @@ import Carousel from "@/components/Carousel";
 import StandingTablePreview from "@/components/StandingTablePreview";
 import { getLaLigaStandingsMockup, getNextGamesChampionsMockup, getPremierLeagueStandingsMockup } from "@/lib/getData";
 
-export default async function Home() {
+export const metadata = {
+  title: "The Football Hub | Home",
+};
+
+export default async function HomePage() {
   
   const standingsLaLiga = await getLaLigaStandingsMockup();
   const standingsPremierLeague = await getPremierLeagueStandingsMockup();

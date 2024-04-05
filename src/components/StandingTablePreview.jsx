@@ -27,12 +27,17 @@ const StandingTablePreview = ({ standing, league }) => {
                 <td className='text-center'>
                   {item.rank}
                 </td>
-                <td className="flex items-center gap-1 justify-start">
-                  <Image width={24} height={24} src={item.team.logo} alt={item.team.name} />
+                <td>
+                  <Link 
+                    href={`/team/${item.team.id.toString()}/squad`} 
+                    className='flex items-center gap-1 justify-start'
+                  >
+                    <Image width={24} height={24} src={item.team.logo} alt={item.team.name} />
 
-                  <span className='font-medium text-sm md:text-base'>
-                    {item.team.name}
-                  </span>
+                    <span className='font-medium text-sm md:text-base'>
+                      {item.team.name}
+                    </span>
+                  </Link>
                 </td>
                 <td className='text-right text-sm md:text-base'>{item.all.played}</td>
                 <td className='text-right text-sm md:text-base'>{item.all.win}</td>
