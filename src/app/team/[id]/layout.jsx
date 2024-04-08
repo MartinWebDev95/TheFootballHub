@@ -11,7 +11,7 @@ export default async function TeamLayout({ children, params }) {
   const infoTeam = await getInfoTeam({ idTeam: id });
 
   return (
-    <main className="bg-green w-full bg-green-950 overflow-x-hidden">
+    <main className="w-full bg-green-950 overflow-x-hidden">
       <TeamHero infoTeam={infoTeam} />
 
       {children}
