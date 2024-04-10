@@ -1,3 +1,4 @@
+import { getLeagueId } from '@/utils/getLeagueId'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -51,7 +52,11 @@ const StandingTablePreview = ({ standing, league }) => {
       </table>
 
       <Link 
-        href={league.name === 'Premier League' ? '/premier-league/standing' : '/la-liga/standing'} 
+        href={
+          league.name === 'La Liga' 
+          ? `/league/${getLeagueId({ leagueName: 'laliga' })}/standing` 
+          : `/league/${getLeagueId({ leagueName: 'premier' })}/standing`
+        } 
         className='w-fit mt-2 font-bold text-sm md:text-base'
       >
         See more

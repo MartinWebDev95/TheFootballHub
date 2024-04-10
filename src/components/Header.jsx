@@ -4,6 +4,7 @@ import { useState } from 'react'
 import HomeLink from './HomeLink'
 import MenuBtn from './MenuBtn'
 import NavItem from './NavItem'
+import { getLeagueId } from '@/utils/getLeagueId'
 
 export const StandingIcon = () => {
   return (
@@ -76,22 +77,22 @@ const navLinks = [
       submenuList: [
         {
           name: "Standing",
-          href: "/la-liga/standing",
+          href: `/league/${getLeagueId({ leagueName: 'laliga' })}/standing`,
           icon: <StandingIcon />
         },
         {
           name: "Upcomings Matches",
-          href: "/la-liga/upcoming-matches",
+          href: `/league/${getLeagueId({ leagueName: 'laliga' })}/upcomings-matches`,
           icon: <UpcomingMatchesIcon />
         },
         {
           name: "Results",
-          href: "/la-liga/results",
+          href: `/league/${getLeagueId({ leagueName: 'laliga' })}/results`,
           icon: <ResultsIcon />
         },
         {
           name: "Top Scorers",
-          href: "/la-liga/top-scorers",
+          href: `/league/${getLeagueId({ leagueName: 'laliga' })}/top-scorers`,
           icon: <TopScorerIcon />
         }
       ]
@@ -107,22 +108,22 @@ const navLinks = [
       submenuList: [
         {
           name: "Standing",
-          href: "/premier-league/standing",
+          href: `/league/${getLeagueId({ leagueName: 'premier' })}/standing`,
           icon: <StandingIcon />
         },
         {
           name: "Upcomings Matches",
-          href: "/premier-league/upcoming-matches",
+          href: `/league/${getLeagueId({ leagueName: 'premier' })}/upcomings-matches`,
           icon: <UpcomingMatchesIcon />
         },
         {
           name: "Results",
-          href: "/premier-league/results",
+          href: `/league/${getLeagueId({ leagueName: 'premier' })}/results`,
           icon: <ResultsIcon />
         },
         {
           name: "Top Scorers",
-          href: "/premier-league/top-scorers",
+          href: `/league/${getLeagueId({ leagueName: 'premier' })}/top-scorers`,
           icon: <TopScorerIcon />
         }
       ]
@@ -138,22 +139,22 @@ const navLinks = [
       submenuList: [
         {
           name: "Standing",
-          href: "/champions-league/standing",
+          href: `/league/${getLeagueId({ leagueName: 'champions' })}/standing`,
           icon: <StandingIcon />
         },
         {
           name: "Upcomings Matches",
-          href: "/champions-league/upcoming-matches",
+          href: `/league/${getLeagueId({ leagueName: 'champions' })}/upcomings-matches`,
           icon: <UpcomingMatchesIcon />
         },
         {
           name: "Results",
-          href: "/champions-league/results",
+          href: `/league/${getLeagueId({ leagueName: 'champions' })}/results`,
           icon: <ResultsIcon />
         },
         {
           name: "Top Scorers",
-          href: "/champions-league/top-scorers",
+          href: `/league/${getLeagueId({ leagueName: 'champions' })}/top-scorers`,
           icon: <TopScorerIcon />
         }
       ]
