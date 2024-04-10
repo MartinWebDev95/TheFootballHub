@@ -13,12 +13,11 @@ export const ArrowIcon = ({ direction = 'right' }) => {
 };
 
 const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
-
   return (
     <li className='lg:relative group w-full lg:w-fit'>
       <button 
         type="button" 
-        className='flex items-center justify-between text-sm lg:text-base py-4 px-4 lg:px-0 w-full lg:w-fit border-b border-black lg:border-none'
+        className='flex items-center justify-between py-4 px-4 lg:px-0 w-full lg:w-fit border-b border-black lg:border-none'
         value={item.name}
         onClick={(e) => setSubmenuActive(e.target.value)}
       >
@@ -37,7 +36,7 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
       </button>
 
       {item.submenu && (
-        <ul className={`absolute h-full w-full lg:h-fit lg:w-fit top-0 lg:top-14 left-0 bg-red-500 lg:rounded-md lg:p-3 lg:shadow-xl ${submenuActive === item.submenu.menu ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} lg:hidden lg:group-hover:block transition-transform ease-in-out duration-200`}>
+        <ul className={`absolute h-full w-full lg:h-fit lg:w-52 top-0 lg:top-14 left-0 bg-red-500 lg:rounded-md lg:p-3 lg:shadow-xl ${submenuActive === item.submenu.menu ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} lg:hidden lg:group-hover:block transition-transform ease-in-out duration-200`}>
           <li className='lg:hidden'>
             <button 
               type='button' 
@@ -52,8 +51,12 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
 
           {item.submenu.submenuList.map((submenuItem) => (
             <li key={submenuItem.name} className='lg:mb-2 lg:last-of-type:mb-0 border-t border-black last-of-type:border-b lg:border-none'>
-              <Link href={submenuItem.href} className='py-4 lg:py-0 px-4 lg:px-2 w-full block'>
-                {submenuItem.name}
+              <Link href={submenuItem.href} className='py-4 lg:py-0 px-4 lg:px-2 w-full flex items-center gap-2'>
+                {submenuItem.icon}
+                
+                <span className='lg:text-sm'>
+                  {submenuItem.name}
+                </span>
               </Link>
             </li>
           ))}
