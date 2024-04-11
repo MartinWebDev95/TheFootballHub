@@ -5,7 +5,7 @@ const PlayerStat = ({ statName, stat }) => {
         {statName}
       </span>
 
-      <span className='text-2xl lg:text-3xl font-medium'>
+      <span className='text-2xl md:text-4xl lg:text-5xl font-semibold'>
         {stat === null ? 'ND' : stat}
       </span>
     </p>

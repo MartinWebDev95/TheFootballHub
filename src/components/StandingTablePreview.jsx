@@ -7,7 +7,7 @@ const StandingTablePreview = ({ standing, league }) => {
     <>
       <table className="table-auto border-separate border-spacing-2 w-full h-full">
         <caption className="caption-top font-semibold">
-          {`Standing ${league.name}`}
+          {league.name}
         </caption>
         <thead>
           <tr>
@@ -28,7 +28,7 @@ const StandingTablePreview = ({ standing, league }) => {
                 <td className='text-center'>
                   {item.rank}
                 </td>
-                <td>
+                <td className='hover:text-sanfelix-400 transition-all ease-in-out duration-200'>
                   <Link 
                     href={`/team/${item.team.id.toString()}/squad`} 
                     className='flex items-center gap-1 justify-start'
@@ -55,9 +55,9 @@ const StandingTablePreview = ({ standing, league }) => {
         href={
           league.name === 'La Liga' 
           ? `/league/${getLeagueId({ leagueName: 'laliga' })}/standing` 
-          : `/league/${getLeagueId({ leagueName: 'premier' })}/standing`
+          : `/league/${getLeagueId({ leagueName: 'premierleague' })}/standing`
         } 
-        className='w-fit mt-2 font-bold text-sm md:text-base'
+        className='w-fit mt-2 font-bold text-sm md:text-base hover:text-sanfelix-400 transition-all ease-in-out duration-200'
       >
         See more
       </Link>

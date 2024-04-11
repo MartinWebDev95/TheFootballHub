@@ -14,7 +14,7 @@ const CompetitionSelector = ({ stats }) => {
   return (
     <>
       <select 
-        className="bg-black rounded-md p-2 cursor-pointer border-2 border-transparent lg:hover:border-slate-400 transition-all ease-in-out duration-200" 
+        className="bg-black rounded-md p-2 cursor-pointer border-2 border-transparent lg:hover:border-sanfelix-400 transition-all ease-in-out duration-200" 
         onChange={handleSelect}
       >
         {stats.filter((stat) => (stat.league.name !== 'Friendlies Clubs')).map((item) => (
@@ -24,7 +24,7 @@ const CompetitionSelector = ({ stats }) => {
         ))}
       </select>
       
-      <div className="mt-4">
+      <div className="mt-6">
         <p className="uppercase font-semibold mb-2">Attack</p>
         
         <div className="flex items-center justify-between flex-wrap gap-4">

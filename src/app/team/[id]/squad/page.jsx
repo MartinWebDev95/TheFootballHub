@@ -19,14 +19,14 @@ async function SquadPage({ params }){
       <ul>
         {Object.entries(squadByPositions).map((items) => (
           <li key={items[0]} className='group'>
-            <span className='group-first-of-type:mt-0 my-4 block font-semibold text-xl text-white'>
+            <span className='group-first-of-type:mt-0 my-4 block font-semibold text-xl'>
               {items[0]}
             </span>
 
             <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
               {items[1].map((player) => (
                 <li key={player.id}>
-                  <Link href={`/player/${player.id}`} className='flex items-center justify-between gap-4 bg-black text-white rounded-md p-3 shadow-xl border-2 border-transparent lg:hover:border-slate-400 lg:hover:scale-105 transition-all ease-in-out duration-200'> 
+                  <Link href={`/player/${player.id}`} className='flex items-center justify-between gap-4 bg-black rounded-md p-3 shadow-xl border-2 border-transparent lg:hover:border-sanfelix-400 lg:hover:scale-105 transition-all ease-in-out duration-200'> 
                     <div className='flex items-center gap-4'>                      
                       <Image 
                         src={player.photo} 

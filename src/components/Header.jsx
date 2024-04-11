@@ -69,7 +69,6 @@ export const UpcomingMatchesIcon = () => {
 const navLinks = [
   {
     name: "La Liga",
-    href: "/la-liga/standing",
     logo: "/assets/laLigaLogo.png",
     alt: "Logo La Liga",
     submenu: {
@@ -100,7 +99,6 @@ const navLinks = [
   },
   {
     name: "Premier League",
-    href: "/premier-league/standing",
     logo: "/assets/premierLogo.png",
     alt: "Logo Premier League",
     submenu: {
@@ -108,22 +106,22 @@ const navLinks = [
       submenuList: [
         {
           name: "Standing",
-          href: `/league/${getLeagueId({ leagueName: 'premier' })}/standing`,
+          href: `/league/${getLeagueId({ leagueName: 'premierleague' })}/standing`,
           icon: <StandingIcon />
         },
         {
           name: "Upcomings Matches",
-          href: `/league/${getLeagueId({ leagueName: 'premier' })}/upcomings-matches`,
+          href: `/league/${getLeagueId({ leagueName: 'premierleague' })}/upcomings-matches`,
           icon: <UpcomingMatchesIcon />
         },
         {
           name: "Results",
-          href: `/league/${getLeagueId({ leagueName: 'premier' })}/results`,
+          href: `/league/${getLeagueId({ leagueName: 'premierleague' })}/results`,
           icon: <ResultsIcon />
         },
         {
           name: "Top Scorers",
-          href: `/league/${getLeagueId({ leagueName: 'premier' })}/top-scorers`,
+          href: `/league/${getLeagueId({ leagueName: 'premierleague' })}/top-scorers`,
           icon: <TopScorerIcon />
         }
       ]
@@ -131,7 +129,6 @@ const navLinks = [
   },
   {
     name: "Champions League",
-    href: "/champions-league/standing",
     logo: "/assets/championsLogo.png",
     alt: "Logo Champions League",
     submenu: {
@@ -139,22 +136,22 @@ const navLinks = [
       submenuList: [
         {
           name: "Standing",
-          href: `/league/${getLeagueId({ leagueName: 'champions' })}/standing`,
+          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/standing`,
           icon: <StandingIcon />
         },
         {
           name: "Upcomings Matches",
-          href: `/league/${getLeagueId({ leagueName: 'champions' })}/upcomings-matches`,
+          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/upcomings-matches`,
           icon: <UpcomingMatchesIcon />
         },
         {
           name: "Results",
-          href: `/league/${getLeagueId({ leagueName: 'champions' })}/results`,
+          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/results`,
           icon: <ResultsIcon />
         },
         {
           name: "Top Scorers",
-          href: `/league/${getLeagueId({ leagueName: 'champions' })}/top-scorers`,
+          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/top-scorers`,
           icon: <TopScorerIcon />
         }
       ]
@@ -168,7 +165,7 @@ const Header = () => {
   const [submenuActive, setSubmenuActive] = useState(null);
 
   return (
-    <header className='w-full bg-green-800 shadow-xl text-white h-12 lg:h-fit'>
+    <header className='w-full bg-sanfelix-900 shadow-xl h-12 lg:h-fit'>
       <div className='container mx-auto px-2 lg:px-0 flex items-center justify-between gap-2 h-full'>
         <HomeLink />
 
@@ -180,7 +177,7 @@ const Header = () => {
 
         <nav 
           aria-hidden={isMenuHidden} 
-          className='w-full lg:w-fit absolute lg:static h-full lg:h-fit bg-yellow-500 lg:bg-transparent top-12 left-0 aria-[hidden=true]:translate-x-full aria-[hidden=false]:translate-x-0 lg:aria-[hidden=true]:translate-x-0 transition-transform ease-in-out duration-200 z-30'
+          className='w-full lg:w-fit absolute lg:static h-full lg:h-fit bg-sanfelix-900/70 lg:bg-transparent top-12 left-0 aria-[hidden=true]:translate-x-full aria-[hidden=false]:translate-x-0 lg:aria-[hidden=true]:translate-x-0 transition-transform ease-in-out duration-200 z-30 backdrop-blur-lg'
         >
           <ul className='flex flex-col items-start lg:flex-row lg:items-center lg:gap-8'>
             {navLinks.map((item) => (

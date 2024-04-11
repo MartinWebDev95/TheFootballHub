@@ -10,24 +10,24 @@ async function PlayerPage({ params }) {
   const { player, stats } = await getPlayer({ idPlayer: id });
 
   return (
-    <main className="bg-green-950 text-white">
+    <main className="bg-sanfelix-950">
       <div className="container mx-auto px-2 lg:px-0 py-8">
         <section className='border-b-2 pb-8'>
           <p className='uppercase font-bold mb-4'>Player</p>
           
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-6'>
             <Image 
               src={player.photo} 
-              width={60} 
-              height={60} 
+              width={70} 
+              height={70} 
               alt={player.name} 
-              className='rounded-full shadow-xl'
+              className='rounded-full shadow-xl w-16 h-16'
             />
 
-            <h1 className='font-medium text-2xl lg:text-3xl'>{player.name}</h1>
+            <h1 className='font-semibold text-2xl md:text-4xl lg:text-5xl'>{player.name}</h1>
           </div>
 
-          <div className='flex items-center justify-between flex-wrap mt-4'>
+          <div className='flex items-center justify-between flex-wrap mt-6'>
             <PlayerStat statName="Nationality" stat={player.nationality} />
             <PlayerStat statName="Age" stat={player.age} />
             <PlayerStat statName="Height" stat={player.height} />
@@ -36,9 +36,9 @@ async function PlayerPage({ params }) {
         </section>
 
         <section className='mt-8 border-b-2 pb-8'>
-          <p className='uppercase font-bold mb-2'>Team</p>
+          <p className='uppercase font-bold mb-4'>Team</p>
 
-          <Link href={`/team/${stats[0].team.id}/squad`} className='flex items-center gap-4 bg-black text-white rounded-md px-3 py-2 shadow-xl border-2 border-transparent lg:hover:border-slate-400 lg:hover:scale-110 transition-all ease-in-out duration-200 w-fit'>
+          <Link href={`/team/${stats[0].team.id}/squad`} className='flex items-center gap-4 bg-black rounded-md px-3 py-2 shadow-xl border-2 border-transparent lg:hover:border-sanfelix-400 lg:hover:scale-110 transition-all ease-in-out duration-200 w-fit'>
             <Image 
               src={stats[0].team.logo} 
               width={40} 
@@ -54,7 +54,7 @@ async function PlayerPage({ params }) {
         </section>
 
         <section className='mt-8'>
-          <p className='uppercase font-bold mb-2'>Stats</p>
+          <p className='uppercase font-bold mb-4'>Stats</p>
 
           <CompetitionSelector stats={stats} />
         </section>
