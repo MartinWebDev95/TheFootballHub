@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const ArrowIcon = ({ direction = 'right' }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`icon icon-tabler icons-tabler-outline icon-tabler-arrow-right pointer-events-none ${direction === 'left' ? 'rotate-180' : ''} lg:hidden`}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`icon icon-tabler icons-tabler-outline icon-tabler-arrow-right pointer-events-none ${direction === 'left' ? 'rotate-180' : ''} lg:hidden stroke-sanfelix-200`}>
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M5 12l14 0" />
       <path d="M13 18l6 -6" />
@@ -17,7 +17,7 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
     <li className='lg:relative group w-full lg:w-fit'>
       <button 
         type="button" 
-        className='flex items-center justify-between py-4 px-4 lg:px-0 w-full lg:w-fit border-b border-black lg:border-none'
+        className='flex items-center justify-between p-4 lg:px-0 w-full lg:w-fit border-b-2 border-sanfelix-200 lg:border-none'
         value={item.name}
         onClick={(e) => setSubmenuActive(e.target.value)}
       >
@@ -36,7 +36,7 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
       </button>
 
       {item.submenu && (
-        <ul className={`absolute h-full w-full lg:h-fit lg:w-52 top-0 lg:top-14 left-0 bg-red-500 lg:rounded-md lg:p-3 lg:shadow-xl ${submenuActive === item.submenu.menu ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} lg:hidden lg:group-hover:block transition-transform ease-in-out duration-200`}>
+        <ul className={`absolute h-full w-full lg:h-fit lg:w-52 top-0 lg:top-14 left-0 bg-sanfelix-900 lg:rounded-b-md lg:shadow-xl ${submenuActive === item.submenu.menu ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} lg:scale-y-0 lg:origin-top lg:group-hover:scale-y-100 transition-transform ease-in-out duration-300 lg:overflow-hidden`}>
           <li className='lg:hidden'>
             <button 
               type='button' 
@@ -50,8 +50,8 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
           </li>
 
           {item.submenu.submenuList.map((submenuItem) => (
-            <li key={submenuItem.name} className='lg:mb-2 lg:last-of-type:mb-0 border-t border-black last-of-type:border-b lg:border-none'>
-              <Link href={submenuItem.href} className='py-4 lg:py-0 px-4 lg:px-2 w-full flex items-center gap-2'>
+            <li key={submenuItem.name} className='border-t-2 border-sanfelix-200 last-of-type:border-b-2 lg:border-none'>
+              <Link href={submenuItem.href} className='p-3 w-full flex items-center gap-2 hover:bg-sanfelix-700 transition-all ease-in-out duration-200'>
                 {submenuItem.icon}
                 
                 <span className='lg:text-sm'>
