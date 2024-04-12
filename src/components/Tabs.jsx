@@ -1,17 +1,24 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 
 const Tabs = ({ tabsList }) => {
+  const pathname = usePathname();
+
   return (
-    <ul className='text-sanfelix-50 flex items-center'>
+    <ul className='text-sanfelix-50 flex items-center justify-center lg:justify-start'>
       {tabsList.map((item) => (
         <li key={item.name} className='group'>
           <Link 
             href={item.href}
-            className='bg-black p-4 border-r-2 border-sanfelix-400 flex items-center gap-3 group-last:border-0 group-hover:text-sanfelix-400 transition-all ease-in-out duration-200'
+            className={`bg-black px-8 py-4 md:px-6 lg:px-4 border-r-2 border-sanfelix-400 flex items-center gap-3 group-last:border-0 group-hover:text-sanfelix-400 transition-all ease-in-out duration-200 ${pathname === item.href ? 'text-sanfelix-400' : 'text-sanfelix-50'}`}
           >
             {item.icon}
 
-            {item.name}
+            <span className='hidden md:block'>
+              {item.name}
+            </span>
           </Link>
         </li>
       ))}
