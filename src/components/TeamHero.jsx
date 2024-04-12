@@ -36,7 +36,7 @@ const TeamHero = ({ infoTeam }) => {
 
   return (
     <section 
-      className="h-[calc(70vh-3.5rem)] bg-no-repeat bg-cover bg-opacity-90 bg-center relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/85 z-10 overflow-hidden" 
+      className="h-[calc(70vh-3.5rem)] bg-no-repeat bg-cover bg-opacity-90 bg-center relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/85 z-10 overflow-hidden shadow-xl border-b-2 border-sanfelix-400" 
       style={{ backgroundImage: `url("${infoTeam.venue.image}")` }}
     >
       <div className="relative container mx-auto px-2 lg:px-0 flex flex-col justify-end h-full z-20">
