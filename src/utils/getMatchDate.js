@@ -9,6 +9,7 @@ export const getMatchDate = ({ matchDate }) => {
   return {
     dateFull: `${weekDay} ${numberDay}, ${month} - ${matchHour}`,
     dateMonth: month,
-    onlyDate: `${weekDay} ${numberDay}, ${month}`
+    onlyDate: `${weekDay} ${numberDay}, ${month}`,
+    onlyHour: matchHour
   };
 };
