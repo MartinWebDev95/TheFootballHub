@@ -1,5 +1,6 @@
 import { getMatchDate } from '@/utils/getMatchDate'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Fixture = ({ item }) => {
   return (
@@ -15,7 +16,9 @@ const Fixture = ({ item }) => {
                 alt={item.teams.home.name}
               />
 
-              <p>{item.teams.home.name}</p>
+              <Link href={`/team/${item.teams.home.id}/squad`} className='hover:text-sanfelix-400 transition-all duration-200 ease-in-out'>
+                {item.teams.home.name}
+              </Link>
             </div>
 
             {item.goals.home !== null && (
@@ -34,7 +37,9 @@ const Fixture = ({ item }) => {
                 alt={item.teams.away.name}
               />
 
-              <p>{item.teams.away.name}</p>
+              <Link href={`/team/${item.teams.away.id}/squad`} className='hover:text-sanfelix-400 transition-all duration-200 ease-in-out'>
+                {item.teams.away.name}
+              </Link>
             </div>
 
             {item.goals.away !== null && (
