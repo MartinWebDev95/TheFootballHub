@@ -4,6 +4,8 @@ import nextGamesChampions from '@/lib/mockupNextGamesChampions.json';
 import infoTeam from '@/lib/mockupInfoTeam.json';
 import squadTeam from '@/lib/mockupSquad.json';
 import infoPlayer from '@/lib/mockupPlayers.json';
+import teamResults from '@/lib/mockupTeamResults.json';
+import teamNextGames from '@/lib/mockupTeamNextGames.json';
 
 export async function getLaLigaStandingsMockup(){
   return await standingsLaLiga.response[0].league;
@@ -23,6 +25,14 @@ export async function getInfoTeam({ idTeam }){
 
 export async function getTeamSquad({ idTeam }){
   return await squadTeam.response[0].players;
+}
+
+export async function getTeamResultsMockup({ idTeam }){
+  return await teamResults.response;
+}
+
+export async function getTeamNextGamesMockup({ idTeam }){
+  return await teamNextGames.response;
 }
 
 export async function getPlayer({ idPlayer }){
