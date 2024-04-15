@@ -12,13 +12,13 @@ const Match = ({ match, matchRef, idMatch }) => {
           match.goals.home === null ? (
             <p className="text-center text-sm flex flex-col gap-1">
               <span className='hidden md:block'>
-                {getMatchDate({ matchDate: match.fixture.date })}
+                {getMatchDate({ matchDate: match.fixture.date }).dateFull}
               </span>
               <span className='md:hidden'>
-                {getMatchDate({ matchDate: match.fixture.date }).split('-')[0]}
+                {getMatchDate({ matchDate: match.fixture.date }).dateFull.split('-')[0]}
               </span>              
               <span className='md:hidden'>
-                {getMatchDate({ matchDate: match.fixture.date }).split('-')[1]}
+                {getMatchDate({ matchDate: match.fixture.date }).dateFull.split('-')[1]}
               </span>
             </p>
           ) : (

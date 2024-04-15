@@ -6,5 +6,9 @@ export const getMatchDate = ({ matchDate }) => {
   const month = date.toLocaleString('en-US', { month: 'short'});
   const matchHour = date.toLocaleString('en-US', { hour: '2-digit'})
 
-  return `${weekDay} ${numberDay}, ${month} - ${matchHour}`;
+  return {
+    dateFull: `${weekDay} ${numberDay}, ${month} - ${matchHour}`,
+    dateMonth: month,
+    onlyDate: `${weekDay} ${numberDay}, ${month}`
+  };
 };
