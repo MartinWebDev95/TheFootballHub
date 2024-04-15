@@ -15,7 +15,7 @@ async function UpcomingsMatchesPage({ params }) {
 
   return (
     <section className='container mx-auto px-2 lg:px-0 py-8'>
-      <ListOfFixture gamesByMonth={gamesByMonth} />
+      <ListOfFixture gamesFiltered={gamesByMonth} />
     </section>
   )
 }

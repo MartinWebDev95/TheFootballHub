@@ -1,10 +1,10 @@
 import React from 'react'
 import Fixture from './Fixture'
 
-const ListOfFixture = ({ gamesByMonth }) => {
+const ListOfFixture = ({ gamesFiltered }) => {
   return (
     <ul>
-      {Object.entries(gamesByMonth).map((game) => (
+      {Object.entries(gamesFiltered).map((game) => (
         <li key={game[0]} className='mb-4'>
           <p className='mb-4 font-bold text-xl'>{game[0]}</p>
 
