@@ -8,44 +8,49 @@ import teamResults from '@/lib/mockupTeamResults.json';
 import teamNextGames from '@/lib/mockupTeamNextGames.json';
 import leagueNextGames from '@/lib/mockupNextLeagueGames.json';
 import leagueResults from '@/lib/mockupLeagueResults.json';
+import topScorers from '@/lib/mockupTopScorersLaLiga.json';
 
-export async function getLaLigaStandingsMockup(){
+export async function getLaLigaStandingsMockup() {
   return await standingsLaLiga.response[0].league;
 }
 
-export async function getPremierLeagueStandingsMockup(){
+export async function getPremierLeagueStandingsMockup() {
   return await standingsPremier.response[0].league;
 }
 
-export async function getNextGamesChampionsMockup(){
+export async function getNextGamesChampionsMockup() {
   return await nextGamesChampions.response;
 }
 
-export async function getInfoTeam({ idTeam }){
+export async function getInfoTeam({ idTeam }) {
   return await infoTeam.response[0];
 }
 
-export async function getTeamSquad({ idTeam }){
+export async function getTeamSquad({ idTeam }) {
   return await squadTeam.response[0].players;
 }
 
-export async function getTeamResultsMockup({ idTeam }){
+export async function getTeamResultsMockup({ idTeam }) {
   return await teamResults.response;
 }
 
-export async function getTeamNextGamesMockup({ idTeam }){
+export async function getTeamNextGamesMockup({ idTeam }) {
   return await teamNextGames.response;
 }
 
-export async function getLeagueNextGamesMockup({ idLeague }){
+export async function getLeagueNextGamesMockup({ idLeague }) {
   return await leagueNextGames.response;
 }
 
-export async function getLeagueResultsMockup({ idLeague }){
+export async function getLeagueResultsMockup({ idLeague }) {
   return await leagueResults.response;
 }
 
-export async function getPlayer({ idPlayer }){
+export async function getLeagueTopScorers({ idLeague }) {
+  return await topScorers.response;
+}
+
+export async function getPlayer({ idPlayer }) {
   return {
     player: await infoPlayer.response[0].player,
     stats: await infoPlayer.response[0].statistics.filter((stats) => stats.team.id === infoPlayer.response[0].statistics[0].team.id),
