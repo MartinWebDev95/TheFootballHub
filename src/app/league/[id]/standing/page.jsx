@@ -1,74 +1,71 @@
-import { getLaLigaStandingsMockup } from "@/lib/getData";
-import Link from 'next/link';
-import Image from 'next/image';
+import { getStandingLeagueMockup } from "@/lib/getData";
+import StandingTable from "@/components/StandingTable";
+import Link from "next/link";
+import Image from "next/image";
 
 async function LeagueStandingPage({ params }) {
   const { id } = params;
 
-  const { standings } = await getLaLigaStandingsMockup();
+  const league = await getStandingLeagueMockup({ idLeague: id })
 
   return (
     <section className="container mx-auto px-2 lg:px-0 py-4">
-      <table className="w-full h-full border-separate border-spacing-y-6">
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th className='text-right text-sm md:text-base font-bold' title="Games Played">PG</th>
-            <th className='text-right text-sm md:text-base font-bold' title="Wins">W</th>
-            <th className='text-right text-sm md:text-base font-bold' title="Draws">D</th>
-            <th className='text-right text-sm md:text-base font-bold' title="Loses">L</th>
-            <th className='text-right text-sm md:text-base font-bold hidden md:table-cell' title="Goals For">
-              GF
-            </th>
-            <th className='text-right text-sm md:text-base font-bold hidden md:table-cell' title="Goals Against">
-              GA
-            </th>
-            <th className='text-right text-sm md:text-base font-bold hidden md:table-cell' title="Difference Goals">
-              GD
-            </th>
-            <th className='text-right text-sm md:text-base font-bold' title="Points">PTS</th>
-          </tr>
-        </thead>
+      {league.name === 'UEFA Champions League' ? (
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {league.standings.map((g) => (
+            <table key={g[0].group} className="relative table-auto border-separate border-spacing-2 bg-[url('/assets/champions-banner.webp')] bg-no-repeat bg-cover rounded-md shadow-lg p-3 after:absolute after:top-0 after:left-0 after:bg-black/70 after:rounded-md after:w-full after:h-full after:-z-10 z-20">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th className="uppercase">{g[0].group}</th>
+                  <th className='text-right text-sm sm:text-base'>PG</th>
+                  <th className='text-right text-sm sm:text-base'>W</th>
+                  <th className='text-right text-sm sm:text-base'>D</th>
+                  <th className='text-right text-sm sm:text-base'>L</th>
+                  <th className='text-right text-sm sm:text-base'>PTS</th>
+                </tr>
+              </thead>
+      
+              <tbody>
+                {
+                  g.map((item) => (
+                    <tr key={item.team?.id} className='mt-2 w-full'>
+                      <td className='text-center'>
+                        {item.rank}
+                      </td>
 
-        <tbody>
-          {
-            standings[0].map((item) => (
-              <tr key={item.team?.id}>
-                <td className='text-left'>
-                  {item.rank}
-                </td>
-                <td className='hover:text-sanfelix-400 transition-all ease-in-out duration-200'>
-                  <Link 
-                    href={`/team/${item.team.id.toString()}/squad`} 
-                    className='flex items-center gap-3 justify-start'
-                  >
-                    <Image width={24} height={24} src={item.team.logo} alt={item.team.name} />
+                      <td className='hover:text-sanfelix-400 transition-all ease-in-out duration-200'>
+                        <Link 
+                          href={`/team/${item.team.id.toString()}/squad`} 
+                          className='flex items-center gap-1 justify-start'
+                        >
+                          <Image width={24} height={24} src={item.team.logo} alt={item.team.name} />
+      
+                          <span className='font-medium text-sm md:text-base'>
+                            {item.team.name}
+                          </span>
+                        </Link>
+                      </td>
 
-                    <span className='font-medium text-sm md:text-base'>
-                      {item.team.name}
-                    </span>
-                  </Link>
-                </td>
-                <td className='text-right text-sm md:text-base'>{item.all.played}</td>
-                <td className='text-right text-sm md:text-base'>{item.all.win}</td>
-                <td className='text-right text-sm md:text-base'>{item.all.draw}</td>
-                <td className='text-right text-sm md:text-base'>{item.all.lose}</td>
-                <td className='text-right text-sm md:text-base hidden md:table-cell'>
-                  {item.all.goals.for}
-                </td>
-                <td className='text-right text-sm md:text-base hidden md:table-cell'>
-                  {item.all.goals.against}
-                </td>
-                <td className='text-right text-sm md:text-base hidden md:table-cell'>
-                  {item.goalsDiff}
-                </td>
-                <td className='text-right text-sm md:text-base font-bold'>{item.points}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+                      <td className='text-right text-sm sm:text-base'>{item.all.played}</td>
+
+                      <td className='text-right text-sm sm:text-base'>{item.all.win}</td>
+
+                      <td className='text-right text-sm sm:text-base'>{item.all.draw}</td>
+
+                      <td className='text-right text-sm sm:text-base'>{item.all.lose}</td>
+                      
+                      <td className='text-right text-sm sm:text-base font-bold'>{item.points}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          ))}    
+        </div>
+      ) : (
+        <StandingTable standing={league.standings[0]} />
+      )}
     </section>
   )
 }

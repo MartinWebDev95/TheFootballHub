@@ -1,5 +1,6 @@
 import standingsLaLiga from '@/lib/mockupStandingLaLiga.json';
 import standingsPremier from '@/lib/mockupStandingPL.json';
+import standingsChampions from '@/lib/mockupStandingChampions.json';
 import nextGamesChampions from '@/lib/mockupNextGamesChampions.json';
 import infoTeam from '@/lib/mockupInfoTeam.json';
 import squadTeam from '@/lib/mockupSquad.json';
@@ -16,6 +17,14 @@ export async function getLaLigaStandingsMockup() {
 
 export async function getPremierLeagueStandingsMockup() {
   return await standingsPremier.response[0].league;
+}
+
+export async function getStandingLeagueMockup({ idLeague }) {
+  if(idLeague === '2'){
+    return await standingsChampions.response[0].league;
+  }
+
+  return await standingsLaLiga.response[0].league;
 }
 
 export async function getNextGamesChampionsMockup() {
