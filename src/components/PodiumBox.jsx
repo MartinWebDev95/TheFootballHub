@@ -1,11 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const PodiumBox = ({ scorer }) => {
   return (
     <li>
-      <Link href={`/player/${scorer.player.id}`} className="flex flex-col items-center border-2 border-transparent hover:border-sanfelix-400 transition-all ease-in-out duration-200 rounded-lg shadow-lg w-48 sm:flex-row sm:w-96 bg-black">
+      <Link href={`/player/${scorer.player.id}`} className={`flex flex-col items-center transition-all ease-in-out duration-200 rounded-lg shadow-lg w-48 sm:flex-row sm:w-96 outline outline-2 outline-transparent ${scorer.statistics[0].league.name === 'UEFA Champions League' ? 'relative bg-[url("/assets/champions-banner.webp")] bg-no-repeat bg-right md:bg-center bg-cover after:absolute after:top-0 after:left-0 after:bg-black/80 after:rounded-lg after:w-full after:h-full after:-z-10 z-20 hover:outline-white' : 'bg-black hover:outline-sanfelix-400'}`}>
         <Image 
           width={80}
           height={80} 
