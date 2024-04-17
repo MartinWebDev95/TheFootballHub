@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const MatchTeam = ({ team }) => {
   return (
-    <div className="text-center w-full">
+    <Link href={`/team/${team.id}/squad`} className="text-center w-full">
       <Image 
         src={team.logo} 
         width={70} 
@@ -13,7 +14,7 @@ const MatchTeam = ({ team }) => {
       />
 
       <p className="font-semibold uppercase mt-2 text-sm md:text-base">{team.name}</p>
-    </div>
+    </Link>
   )
 }
 
