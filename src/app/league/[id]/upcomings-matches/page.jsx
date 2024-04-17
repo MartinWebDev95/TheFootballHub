@@ -8,7 +8,7 @@ export const metadata = {
 async function LeagueUpcomingsMatchesPage({ params }) {
   const { id } = params;
 
-  const nextGames = await getLeagueNextGamesMockup({ idTeam: id })
+  const nextGames = await getLeagueNextGamesMockup({ idLeague: id })
 
   const gamesByMatchweek = Object.groupBy(nextGames, (game) => game.league.round);
 

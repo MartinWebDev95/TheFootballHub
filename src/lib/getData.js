@@ -48,6 +48,8 @@ export async function getTeamNextGamesMockup({ idTeam }) {
 }
 
 export async function getLeagueNextGamesMockup({ idLeague }) {
+  if(idLeague === '2') return await nextGamesChampions.response;
+  
   return await leagueNextGames.response;
 }
 
