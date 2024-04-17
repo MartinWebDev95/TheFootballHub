@@ -4,7 +4,7 @@ import { getLeagueResultsMockup } from "@/lib/getData";
 async function LeagueResultsPage({ params }) {
   const { id } = params;
 
-  const results = await getLeagueResultsMockup({ idTeam: id })
+  const results = await getLeagueResultsMockup({ idLeague: id })
 
   const gamesByMatchweek = Object.groupBy(results, (game) => game.league.round);
 

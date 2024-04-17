@@ -2,6 +2,7 @@ import standingsLaLiga from '@/lib/mockupStandingLaLiga.json';
 import standingsPremier from '@/lib/mockupStandingPL.json';
 import standingsChampions from '@/lib/mockupStandingChampions.json';
 import nextGamesChampions from '@/lib/mockupNextGamesChampions.json';
+import championsResults from '@/lib/mockupChampionsResults.json';
 import infoTeam from '@/lib/mockupInfoTeam.json';
 import squadTeam from '@/lib/mockupSquad.json';
 import infoPlayer from '@/lib/mockupPlayers.json';
@@ -54,6 +55,8 @@ export async function getLeagueNextGamesMockup({ idLeague }) {
 }
 
 export async function getLeagueResultsMockup({ idLeague }) {
+  if(idLeague === '2') return await championsResults.response;
+  
   return await leagueResults.response;
 }
 
