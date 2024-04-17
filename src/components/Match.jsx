@@ -3,7 +3,7 @@ import MatchTeam from './MatchTeam'
 
 const Match = ({ match, matchRef, idMatch }) => {
   return (
-    <div ref={matchRef} data-id={idMatch} className="flex items-center justify-around min-w-full bg-black/60 py-4 px-2 md:px-0">
+    <div ref={matchRef} data-id={idMatch} className="flex items-center justify-around min-w-full py-4 px-2 md:px-0">
       <MatchTeam team={match.teams.home} />
 
       <div className="w-full">

@@ -20,7 +20,7 @@ const Carousel = ({ matches }) => {
         ))}
       </div>
       
-      <div className="flex items-center justify-center gap-2 pb-4 bg-black/60">
+      <div className="flex items-center justify-center gap-2 pb-4">
         {matches.map((match, index) => (
           <CarouselButton 
             key={match.fixture.id}

@@ -1,6 +1,8 @@
 import Carousel from "@/components/Carousel";
 import StandingTablePreview from "@/components/StandingTablePreview";
 import { getLaLigaStandingsMockup, getNextGamesChampionsMockup, getPremierLeagueStandingsMockup } from "@/lib/getData";
+import { getLeagueId } from "@/utils/getLeagueId";
+import Link from "next/link";
 
 export const metadata = {
   title: "The Football Hub | Home",
@@ -30,10 +32,10 @@ export default async function HomePage() {
             />
           </div>
 
-          <div className="col-start-1 col-end-3 row-start-3 row-end-4 md:row-start-2 md:row-end-3 bg-[url('/assets/champions-banner.webp')] bg-no-repeat bg-cover bg-center rounded-lg shadow-lg overflow-x-hidden w-full text-white">
-            <h2 className="bg-black/60 text-balance text-center pt-4">
+          <div className="relative col-start-1 col-end-3 row-start-3 row-end-4 md:row-start-2 md:row-end-3 bg-[url('/assets/champions-banner.webp')] bg-no-repeat bg-cover bg-center rounded-lg shadow-lg overflow-x-hidden w-full after:absolute after:top-0 after:left-0 after:bg-black/80 after:rounded-lg after:w-full after:h-full after:-z-10 z-20">
+            <Link href={`/league/${getLeagueId({ leagueName: 'championsleague' })}/upcomings-matches`} className="text-balance text-center pt-4 block transition-all ease-in-out duration-200 hover:text-sanfelix-400">
               Upcomings Champions League Games
-            </h2>
+            </Link>
 
             <Carousel matches={nextGamesChampions} />
           </div>
