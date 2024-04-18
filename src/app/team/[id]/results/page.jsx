@@ -1,5 +1,5 @@
 import ListOfFixture from '@/components/ListOfFixture';
-import { getTeamResultsMockup } from '@/lib/getData';
+import { getTeamResults } from '@/lib/getData';
 import { getMatchDate } from '@/utils/getMatchDate';
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 async function ResultsPage({ params }) {
   const { id } = params;
   
-  const results = await getTeamResultsMockup({ idTeam: id })
+  const results = await getTeamResults({ idTeam: id })
 
   const gamesByMonth = Object.groupBy(results, (result) => getMatchDate({ matchDate: result.fixture.date }).dateMonth);
 

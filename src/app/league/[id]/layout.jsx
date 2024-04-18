@@ -1,5 +1,5 @@
 import LeagueHero from "@/components/LeagueHero";
-import { getLaLigaStandingsMockup } from "@/lib/getData";
+import { getStandingLeague } from "@/lib/getData";
 
 export const metadata = {
   title: "The Football Hub | League",
@@ -8,7 +8,7 @@ export const metadata = {
 export default async function LeagueLayout({ children, params }) {
   const { id } = params;
 
-  const infoLeague = await getLaLigaStandingsMockup();
+  const infoLeague = await getStandingLeague({ idLeague: id });
 
   return (
     <main className="w-full bg-sanfelix-950">

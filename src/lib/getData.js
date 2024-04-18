@@ -1,75 +1,128 @@
-import standingsLaLiga from '@/lib/mockupStandingLaLiga.json';
-import standingsPremier from '@/lib/mockupStandingPL.json';
-import standingsChampions from '@/lib/mockupStandingChampions.json';
-import nextGamesChampions from '@/lib/mockupNextGamesChampions.json';
-import championsResults from '@/lib/mockupChampionsResults.json';
-import infoTeam from '@/lib/mockupInfoTeam.json';
-import squadTeam from '@/lib/mockupSquad.json';
-import infoPlayer from '@/lib/mockupPlayers.json';
-import teamResults from '@/lib/mockupTeamResults.json';
-import teamNextGames from '@/lib/mockupTeamNextGames.json';
-import leagueNextGames from '@/lib/mockupNextLeagueGames.json';
-import leagueResults from '@/lib/mockupLeagueResults.json';
-import topScorers from '@/lib/mockupTopScorersLaLiga.json';
-import topScorersChampions from '@/lib/mockupTopScorersChampions.json';
+export async function getStandingLeague({ idLeague }) {
+  const response = await fetch(`https://v3.football.api-sports.io/standings?league=${idLeague}&season=2023`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
 
-export async function getLaLigaStandingsMockup() {
-  return await standingsLaLiga.response[0].league;
-}
+  const data = await response.json();
 
-export async function getPremierLeagueStandingsMockup() {
-  return await standingsPremier.response[0].league;
-}
-
-export async function getStandingLeagueMockup({ idLeague }) {
-  if(idLeague === '2'){
-    return await standingsChampions.response[0].league;
-  }
-
-  return await standingsLaLiga.response[0].league;
-}
-
-export async function getNextGamesChampionsMockup() {
-  return await nextGamesChampions.response;
+  return data.response[0].league;
 }
 
 export async function getInfoTeam({ idTeam }) {
-  return await infoTeam.response[0];
+  const response = await fetch(`https://v3.football.api-sports.io/teams?id=${idTeam}`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
+
+  const data = await response.json();
+  
+  return data.response[0];
 }
 
 export async function getTeamSquad({ idTeam }) {
-  return await squadTeam.response[0].players;
-}
+  const response = await fetch(`https://v3.football.api-sports.io/players/squads?team=${idTeam}`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
 
-export async function getTeamResultsMockup({ idTeam }) {
-  return await teamResults.response;
-}
-
-export async function getTeamNextGamesMockup({ idTeam }) {
-  return await teamNextGames.response;
-}
-
-export async function getLeagueNextGamesMockup({ idLeague }) {
-  if(idLeague === '2') return await nextGamesChampions.response;
+  const data = await response.json();
   
-  return await leagueNextGames.response;
+  return data.response[0].players;
 }
 
-export async function getLeagueResultsMockup({ idLeague }) {
-  if(idLeague === '2') return await championsResults.response;
-  
-  return await leagueResults.response;
+export async function getTeamResults({ idTeam }) {
+  const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${idTeam}&season=2023&status=FT`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
+
+  const data = await response.json();
+
+  return data.response;
+}
+
+export async function getTeamNextGames({ idTeam }) {
+  const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${idTeam}&season=2023&status=NS`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
+
+  const data = await response.json();
+
+  return data.response;
+}
+
+export async function getLeagueNextGames({ idLeague }) {
+  const response = await fetch(`https://v3.football.api-sports.io/fixtures?league=${idLeague}&season=2023&status=NS`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
+
+  const data = await response.json();
+
+  return data.response;
+}
+
+export async function getLeagueResults({ idLeague }) {
+  const response = await fetch(`https://v3.football.api-sports.io/fixtures?league=${idLeague}&season=2023&status=FT`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
+
+  const data = await response.json();
+
+  return data.response;
 }
 
 export async function getLeagueTopScorers({ idLeague }) {
-  if(idLeague === '2') return await topScorersChampions.response;
-  
-  return await topScorers.response;
+  const response = await fetch(`https://v3.football.api-sports.io/players/topscorers?league=${idLeague}&season=2023`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
+
+  const data = await response.json();
+
+  return data.response;
 }
 
 export async function getPlayer({ idPlayer }) {
+  const response = await fetch(`https://v3.football.api-sports.io/players?id=${idPlayer}&season=2023`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`
+    }
+  })
+
+  const data = await response.json();
+
   return {
-    player: await infoPlayer.response[0].player,
-    stats: await infoPlayer.response[0].statistics.filter((stats) => stats.team.id === infoPlayer.response[0].statistics[0].team.id),
+    player: data.response[0].player,
+    stats: data.response[0].statistics.filter((stats) => stats.team.id === data.response[0].statistics[0].team.id),
   };
 }

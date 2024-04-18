@@ -1,5 +1,5 @@
 import ListOfFixture from "@/components/ListOfFixture";
-import { getLeagueNextGamesMockup } from "@/lib/getData";
+import { getLeagueNextGames } from "@/lib/getData";
 
 export const metadata = {
   title: "The Football Hub | Teams | Upcomings Matches",
@@ -8,7 +8,7 @@ export const metadata = {
 async function LeagueUpcomingsMatchesPage({ params }) {
   const { id } = params;
 
-  const nextGames = await getLeagueNextGamesMockup({ idLeague: id })
+  const nextGames = await getLeagueNextGames({ idLeague: id })
 
   const gamesByMatchweek = Object.groupBy(nextGames, (game) => game.league.round);
 

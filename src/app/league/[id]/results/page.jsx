@@ -1,10 +1,10 @@
 import ListOfFixture from "@/components/ListOfFixture";
-import { getLeagueResultsMockup } from "@/lib/getData";
+import { getLeagueResults } from "@/lib/getData";
 
 async function LeagueResultsPage({ params }) {
   const { id } = params;
 
-  const results = await getLeagueResultsMockup({ idLeague: id })
+  const results = await getLeagueResults({ idLeague: id })
 
   const gamesByMatchweek = Object.groupBy(results, (game) => game.league.round);
 

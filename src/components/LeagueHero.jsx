@@ -7,22 +7,22 @@ const LeagueHero = ({ infoLeague }) => {
   const tabsList = [
     {
       name: "Standing",
-      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replace(' ', '') })}/standing`,
+      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replaceAll(' ', '') })}/standing`,
       icon: <StandingIcon />
     },
     {
       name: "Upcomings Matches",
-      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replace(' ', '') })}/upcomings-matches`,
+      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replaceAll(' ', '') })}/upcomings-matches`,
       icon: <UpcomingMatchesIcon />
     },
     {
       name: "Results",
-      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replace(' ', '') })}/results`,
+      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replaceAll(' ', '') })}/results`,
       icon: <ResultsIcon />
     },
     {
       name: "Top Scorers",
-      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replace(' ', '') })}/top-scorers`,
+      href: `/league/${getLeagueId({ leagueName: infoLeague.name.toLowerCase().replaceAll(' ', '') })}/top-scorers`,
       icon: <TopScorerIcon />
     }
   ];

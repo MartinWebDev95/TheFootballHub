@@ -1,11 +1,11 @@
-import { getStandingLeagueMockup } from "@/lib/getData";
+import { getStandingLeague } from "@/lib/getData";
 import StandingTable from "@/components/StandingTable";
 import StandingTableChampions from "@/components/StandingTableChampions";
 
 async function LeagueStandingPage({ params }) {
   const { id } = params;
 
-  const league = await getStandingLeagueMockup({ idLeague: id })
+  const league = await getStandingLeague({ idLeague: id })
 
   return (
     <section className="container mx-auto px-2 lg:px-0 py-8">

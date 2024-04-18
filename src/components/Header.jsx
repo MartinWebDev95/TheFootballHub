@@ -136,22 +136,22 @@ const navLinks = [
       submenuList: [
         {
           name: "Standing",
-          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/standing`,
+          href: `/league/${getLeagueId({ leagueName: 'uefachampionsleague' })}/standing`,
           icon: <StandingIcon />
         },
         {
           name: "Upcomings Matches",
-          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/upcomings-matches`,
+          href: `/league/${getLeagueId({ leagueName: 'uefachampionsleague' })}/upcomings-matches`,
           icon: <UpcomingMatchesIcon />
         },
         {
           name: "Results",
-          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/results`,
+          href: `/league/${getLeagueId({ leagueName: 'uefachampionsleague' })}/results`,
           icon: <ResultsIcon />
         },
         {
           name: "Top Scorers",
-          href: `/league/${getLeagueId({ leagueName: 'championsleague' })}/top-scorers`,
+          href: `/league/${getLeagueId({ leagueName: 'uefachampionsleague' })}/top-scorers`,
           icon: <TopScorerIcon />
         }
       ]
