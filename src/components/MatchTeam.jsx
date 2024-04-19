@@ -13,7 +13,7 @@ const MatchTeam = ({ team }) => {
         className="mx-auto w-12 h-12 md:w-16 md:h-16"
       />
 
-      <p className="font-semibold uppercase mt-2 text-sm md:text-base">{team.name}</p>
+      <p className="font-semibold uppercase mt-2 text-xs md:text-base">{team.name}</p>
     </Link>
   )
 }
