@@ -83,7 +83,7 @@ export async function getLeagueNextGames({ idLeague }) {
 }
 
 export async function getLeagueResults({ idLeague }) {
-  const response = await fetch(`https://v3.football.api-sports.io/fixtures?league=${idLeague}&season=2023&status=FT`, {
+  const response = await fetch(`https://v3.football.api-sports.io/fixtures?league=${idLeague}&season=2023&status=FT-PEN`, {
     method: "GET",
     headers: {
       "x-rapidapi-host": "v3.football.api-sports.io",
