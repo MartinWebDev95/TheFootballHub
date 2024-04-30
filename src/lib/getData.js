@@ -41,7 +41,7 @@ export async function getTeamSquad({ idTeam }) {
 }
 
 export async function getTeamResults({ idTeam }) {
-  const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${idTeam}&season=2023&status=FT`, {
+  const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${idTeam}&season=2023&status=FT-AET-PEN`, {
     method: "GET",
     headers: {
       "x-rapidapi-host": "v3.football.api-sports.io",
@@ -83,7 +83,7 @@ export async function getLeagueNextGames({ idLeague }) {
 }
 
 export async function getLeagueResults({ idLeague }) {
-  const response = await fetch(`https://v3.football.api-sports.io/fixtures?league=${idLeague}&season=2023&status=FT-PEN`, {
+  const response = await fetch(`https://v3.football.api-sports.io/fixtures?league=${idLeague}&season=2023&status=FT-AET-PEN`, {
     method: "GET",
     headers: {
       "x-rapidapi-host": "v3.football.api-sports.io",
