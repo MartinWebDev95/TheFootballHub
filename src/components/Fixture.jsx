@@ -21,11 +21,19 @@ const Fixture = ({ item }) => {
               </Link>
             </div>
 
-            {item.goals.home !== null && (
-              <p className={`${item.goals.home > item.goals.away ? 'font-black' : 'font-normal'}`}>
-                {item.goals.home}
-              </p>
-            )}
+            <div className='flex items-center gap-2'>
+              {item.goals.home !== null && (
+                <p className={`${item.goals.home > item.goals.away ? 'font-black' : 'font-normal'}`}>
+                  {item.goals.home}
+                </p>
+              )}
+
+              {item.score.penalty.home !== null && (
+                <p className={`${item.score.penalty.home > item.score.penalty.away ? 'font-bold' : 'font-normal'} text-sm`}>
+                  {`(${item.score.penalty.home})`}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className='flex items-center justify-between gap-2'>
@@ -42,11 +50,19 @@ const Fixture = ({ item }) => {
               </Link>
             </div>
 
-            {item.goals.away !== null && (
-              <p className={`${item.goals.away > item.goals.home ? 'font-black' : 'font-normal'}`}>
-                {item.goals.away}
-              </p>
-            )}
+            <div className='flex items-center gap-2'>
+              {item.goals.away !== null && (
+                <p className={`${item.goals.away > item.goals.home ? 'font-black' : 'font-normal'}`}>
+                  {item.goals.away}
+                </p>
+              )}
+
+              {item.score.penalty.away !== null && (
+                <p className={`${item.score.penalty.away > item.score.penalty.home ? 'font-bold' : 'font-normal'} text-sm`}>
+                  {`(${item.score.penalty.away})`}
+                </p>
+              )}
+            </div>
           </div>
         </div>
 

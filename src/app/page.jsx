@@ -1,7 +1,7 @@
 import Carousel from "@/components/Carousel";
 import StandingTablePreview from "@/components/StandingTablePreview";
 import Link from "next/link";
-import { getLeagueNextGames, getLeagueResults, getStandingLeague } from "@/lib/getData";
+import { getLeagueResults, getStandingLeague } from "@/lib/getData";
 import { getLeagueId } from "@/utils/getLeagueId";
 
 export const metadata = {
