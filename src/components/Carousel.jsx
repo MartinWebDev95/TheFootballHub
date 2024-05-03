@@ -1,21 +1,25 @@
 'use client'
 
-import { useRef } from 'react';
 import Match from './Match'
 import CarouselButton from './CarouselButton';
+import useSlider from '@/hooks/useSlider';
 
 const Carousel = ({ matches }) => {
-  const carouselRef = useRef();
-  const matchWidth = useRef();
-
   const gamesByMatchweek = Object.groupBy(matches, (game) => game.league.round);
   const getResultsLastMatchweek = Object.entries(gamesByMatchweek)[
     Object.entries(gamesByMatchweek).length - 1
   ];
 
+  const { carouselRef, matchWidth, btnRef, setIsEnter } = useSlider();
+
   return (
     <>
-      <div ref={carouselRef} className="flex items-center w-full text-white">
+      <div 
+        ref={carouselRef} 
+        className="flex items-center w-full text-white"
+        onMouseEnter={() => setIsEnter(true)} 
+        onMouseLeave={() => setIsEnter(false)}
+      >
         {getResultsLastMatchweek[1].map((match, index) => (
           <Match 
             key={match.fixture.id} 
@@ -26,13 +30,11 @@ const Carousel = ({ matches }) => {
         ))}
       </div>
       
-      <div className="flex items-center justify-center gap-2 pb-4">
+      <div ref={btnRef} className="flex items-center justify-center gap-2 pb-4">
         {getResultsLastMatchweek[1].map((match, index) => (
           <CarouselButton 
             key={match.fixture.id}
-            carouselRef={carouselRef} 
-            matchWidth={matchWidth}
-            idButton={index} 
+            idButton={index}
           />
         ))}
       </div>
