@@ -11,6 +11,80 @@ const CompetitionSelector = ({ stats }) => {
     setStatsByCompetition(stats.find((comp) => comp.league.name === e.target.value));
   };
 
+  const allPlayerStats = [
+    {
+      zone: 'Attack',
+      zoneStats: [
+        {
+          statName: 'Goals',
+          stat: statsByCompetition.goals.total
+        },
+        {
+          statName: 'Shots',
+          stat: statsByCompetition.shots.total
+        },
+        {
+          statName: 'Attempts Dribbles',
+          stat: statsByCompetition.dribbles.attempts
+        },
+        {
+          statName: 'Success Dribbles',
+          stat: statsByCompetition.dribbles.success
+        },
+      ]
+    },
+    {
+      zone: 'Distribution',
+      zoneStats: [
+        {
+          statName: 'Assists',
+          stat: statsByCompetition.goals.assists
+        },
+        {
+          statName: 'Total Passes',
+          stat: statsByCompetition.passes.total
+        },
+        {
+          statName: 'Key Passes',
+          stat: statsByCompetition.passes.key
+        },
+        {
+          statName: 'Passes Accuracy',
+          stat: statsByCompetition.passes.accuracy
+        },
+      ]
+    },
+    {
+      zone: 'Defense',
+      zoneStats: [
+        {
+          statName: 'Interceptions',
+          stat: statsByCompetition.tackles.interceptions
+        },
+        {
+          statName: 'Blocks',
+          stat: statsByCompetition.tackles.blocks
+        },
+        {
+          statName: 'Total Duels',
+          stat: statsByCompetition.duels.total
+        },
+        {
+          statName: 'Duels Won',
+          stat: statsByCompetition.duels.won
+        },
+        {
+          statName: 'Fouls Drawn',
+          stat: statsByCompetition.fouls.drawn
+        },
+        {
+          statName: 'Fouls Committed',
+          stat: statsByCompetition.fouls.committed
+        },
+      ]
+    },
+  ]
+
   return (
     <>
       <select 
@@ -25,34 +99,17 @@ const CompetitionSelector = ({ stats }) => {
       </select>
       
       <div className="mt-6">
-        <p className="uppercase font-semibold mb-2">Attack</p>
-        
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <PlayerStat statName="Goals" stat={statsByCompetition.goals.total} />
-          <PlayerStat statName="Shots" stat={statsByCompetition.shots.total} />
-          <PlayerStat statName="Attempts Dribbles" stat={statsByCompetition.dribbles.attempts} />
-          <PlayerStat statName="Success Dribbles" stat={statsByCompetition.dribbles.success} />
-        </div>
-
-        <p className="uppercase font-semibold mb-2 mt-6">Distribution</p>
-        
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <PlayerStat statName="Assists" stat={statsByCompetition.goals.assists} />
-          <PlayerStat statName="Total Passes" stat={statsByCompetition.passes.total} />
-          <PlayerStat statName="Key Passes" stat={statsByCompetition.passes.key} />
-          <PlayerStat statName="Passes Accuracy" stat={`${statsByCompetition.passes.accuracy}%`} />
-        </div>
-
-        <p className="uppercase font-semibold mb-2 mt-6">Defense</p>
-        
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <PlayerStat statName="Interceptions" stat={statsByCompetition.tackles.interceptions} />
-          <PlayerStat statName="Blocks" stat={statsByCompetition.tackles.blocks} />
-          <PlayerStat statName="Total Duels" stat={statsByCompetition.duels.total} />
-          <PlayerStat statName="Duels Won" stat={statsByCompetition.duels.won} />
-          <PlayerStat statName="Fouls Drawn" stat={statsByCompetition.fouls.drawn} />
-          <PlayerStat statName="Fouls Committed" stat={statsByCompetition.fouls.committed} />
-        </div>
+        {allPlayerStats.map((item) => (
+          <>
+            <p key={item.zone} className="uppercase font-semibold mb-2 mt-6">{item.zone}</p>
+  
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              {item.zoneStats.map((s) => (
+                <PlayerStat key={s.statName} statName={s.statName} stat={s.stat} />
+              ))}
+           </div>
+          </>
+        ))}
       </div>
     </>
   )
