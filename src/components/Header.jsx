@@ -177,7 +177,7 @@ const Header = () => {
 
         <nav 
           aria-hidden={isMenuHidden} 
-          className='w-full lg:w-fit absolute lg:static h-full lg:h-fit bg-sanfelix-900/70 lg:bg-transparent top-12 left-0 aria-[hidden=true]:translate-x-full aria-[hidden=false]:translate-x-0 lg:aria-[hidden=true]:translate-x-0 transition-transform ease-in-out duration-200 z-30 backdrop-blur-lg'
+          className='w-full lg:w-fit absolute lg:static h-full lg:h-fit bg-sanfelix-900 lg:bg-transparent top-12 left-0 aria-[hidden=true]:translate-x-full aria-[hidden=false]:translate-x-0 lg:aria-[hidden=true]:translate-x-0 transition-transform ease-in-out duration-200 z-30'
         >
           <ul className='flex flex-col items-start lg:flex-row lg:items-center lg:gap-8'>
             {navLinks.map((item) => (

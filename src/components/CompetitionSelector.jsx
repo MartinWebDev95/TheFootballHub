@@ -88,7 +88,7 @@ const CompetitionSelector = ({ stats }) => {
   return (
     <>
       <select 
-        className="bg-black rounded-md p-2 cursor-pointer border-2 border-transparent lg:hover:border-sanfelix-400 transition-all ease-in-out duration-200" 
+        className="bg-black rounded-md p-1 lg:p-2 cursor-pointer border-2 border-transparent lg:hover:border-sanfelix-400 transition-all ease-in-out duration-200" 
         onChange={handleSelect}
       >
         {stats.filter((stat) => (stat.league.name !== 'Friendlies Clubs')).map((item) => (

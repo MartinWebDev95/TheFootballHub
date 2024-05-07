@@ -38,13 +38,12 @@ async function PlayerPage({ params }) {
         <section className='mt-8 border-b-2 pb-8'>
           <p className='uppercase font-bold mb-4'>Team</p>
 
-          <Link href={`/team/${stats[0].team.id}/squad`} className='flex items-center gap-4 bg-black rounded-md px-3 py-2 shadow-xl border-2 border-transparent lg:hover:border-sanfelix-400 lg:hover:scale-110 transition-all ease-in-out duration-200 w-fit'>
+          <Link href={`/team/${stats[0].team.id}/squad`} className='flex items-center gap-3 bg-black rounded-md py-1 px-2 lg:py-2 shadow-xl border-2 border-transparent lg:hover:border-sanfelix-400 lg:hover:scale-110 transition-all ease-in-out duration-200 w-fit'>
             <Image 
               src={stats[0].team.logo} 
               width={40} 
               height={40} 
               alt={stats[0].team.name} 
-              className='rounded-full'
             />
 
             <span className='font-medium'>
