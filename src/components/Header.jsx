@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import HomeLink from './HomeLink'
 import MenuBtn from './MenuBtn'
 import NavItem from './NavItem'
 import { getLeagueId } from '@/utils/getLeagueId'
+import { usePathname } from 'next/navigation'
 
 export const StandingIcon = () => {
   return (
@@ -161,8 +162,17 @@ const navLinks = [
 
 const Header = () => {
 
+  const pathname = usePathname();
+
   const [isMenuHidden, setIsMenuHidden] = useState(true);
   const [submenuActive, setSubmenuActive] = useState(null);
+
+  //Close the mobile menu when URL changes
+  useEffect(() => {
+    if(!isMenuHidden) setIsMenuHidden(true);
+    if(submenuActive !== null) setSubmenuActive(null);
+    document.body.style.overflowY = 'auto';
+  }, [pathname])
 
   return (
     <header className='w-full bg-sanfelix-900 shadow-xl h-12 lg:h-fit'>
