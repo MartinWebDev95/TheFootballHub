@@ -4,6 +4,10 @@ import { getPlayer } from "@/lib/getData";
 import PlayerStat from '@/components/PlayerStat';
 import CompetitionSelector from '@/components/CompetitionSelector';
 
+export const metadata = {
+  title: 'The Football Hub | Player'
+}
+
 async function PlayerPage({ params }) {
   const { id } = params;
 

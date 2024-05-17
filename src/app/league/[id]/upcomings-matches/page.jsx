@@ -10,11 +10,9 @@ async function LeagueUpcomingsMatchesPage({ params }) {
 
   const nextGames = await getLeagueNextGames({ idLeague: id })
 
-  const gamesByMatchweek = Object.groupBy(nextGames, (game) => game.league.round);
-
   return (
     <section className='container mx-auto px-2 lg:px-0 py-8'>
-      <ListOfFixture gamesFiltered={gamesByMatchweek} />
+      <ListOfFixture results={nextGames} />
     </section>
   )
 }

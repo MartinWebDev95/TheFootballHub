@@ -1,6 +1,5 @@
 import ListOfFixture from '@/components/ListOfFixture';
 import { getTeamResults } from '@/lib/getData';
-import { getMatchDate } from '@/utils/getMatchDate';
 
 export const metadata = {
   title: "The Football Hub | Teams | Results",
@@ -11,11 +10,9 @@ async function ResultsPage({ params }) {
   
   const results = await getTeamResults({ idTeam: id })
 
-  const gamesByMonth = Object.groupBy(results, (result) => getMatchDate({ matchDate: result.fixture.date }).dateMonth);
-
   return (
     <section className='container mx-auto px-2 lg:px-0 py-8'>
-      <ListOfFixture gamesFiltered={gamesByMonth} />
+      <ListOfFixture results={results} resultsByTeam />
     </section>
   )
 }
