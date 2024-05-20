@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "The Football Hub | Teams | Squad",
+  title: "The Football Hub | Team | Squad",
 };
 
 async function SquadPage({ params }){

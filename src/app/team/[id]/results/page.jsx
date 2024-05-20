@@ -2,7 +2,7 @@ import ListOfFixture from '@/components/ListOfFixture';
 import { getTeamResults } from '@/lib/getData';
 
 export const metadata = {
-  title: "The Football Hub | Teams | Results",
+  title: "The Football Hub | Team | Results",
 };
 
 async function ResultsPage({ params }) {

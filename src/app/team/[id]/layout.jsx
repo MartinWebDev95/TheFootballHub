@@ -2,7 +2,7 @@ import TeamHero from "@/components/TeamHero";
 import { getInfoTeam } from "@/lib/getData";
 
 export const metadata = {
-  title: "The Football Hub | Teams",
+  title: "The Football Hub | Team",
 };
 
 export default async function TeamLayout({ children, params }) {

@@ -2,6 +2,10 @@ import PodiumBox from "@/components/PodiumBox";
 import ScorersTable from "@/components/ScorersTable";
 import { getLeagueTopScorers } from "@/lib/getData";
 
+export const metadata = {
+  title: "The Football Hub | League | Top Scorers",
+};
+
 async function LeagueTopScorers({ params }) {
   const { id } = params;
 

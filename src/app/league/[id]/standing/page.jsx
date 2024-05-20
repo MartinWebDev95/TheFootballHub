@@ -2,6 +2,10 @@ import { getStandingLeague } from "@/lib/getData";
 import StandingTable from "@/components/StandingTable";
 import StandingTableChampions from "@/components/StandingTableChampions";
 
+export const metadata = {
+  title: "The Football Hub | League | Standing",
+};
+
 async function LeagueStandingPage({ params }) {
   const { id } = params;
 

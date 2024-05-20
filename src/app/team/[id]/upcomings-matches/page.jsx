@@ -2,7 +2,7 @@ import ListOfFixture from "@/components/ListOfFixture";
 import { getTeamNextGames } from "@/lib/getData";
 
 export const metadata = {
-  title: "The Football Hub | Teams | Upcomings Matches",
+  title: "The Football Hub | Team | Upcomings Matches",
 };
 
 async function UpcomingsMatchesPage({ params }) {

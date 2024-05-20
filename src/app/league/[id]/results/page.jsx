@@ -1,6 +1,10 @@
 import ListOfFixture from "@/components/ListOfFixture";
 import { getLeagueResults } from "@/lib/getData";
 
+export const metadata = {
+  title: "The Football Hub | League | Results",
+};
+
 async function LeagueResultsPage({ params }) {
   const { id } = params;
 
