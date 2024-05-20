@@ -70,7 +70,7 @@ export const UpcomingMatchesIcon = () => {
 const navLinks = [
   {
     name: "La Liga",
-    logo: "/assets/laLigaLogo.png",
+    logo: "/assets/laLigaLogo.webp",
     alt: "Logo La Liga",
     submenu: {
       menu: 'La Liga',
