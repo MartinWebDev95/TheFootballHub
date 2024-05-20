@@ -2,7 +2,7 @@ import ListOfFixture from "@/components/ListOfFixture";
 import { getLeagueNextGames } from "@/lib/getData";
 
 export const metadata = {
-  title: "The Football Hub | Teams | Upcomings Matches",
+  title: "The Football Hub | League | Upcomings Matches",
 };
 
 async function LeagueUpcomingsMatchesPage({ params }) {
@@ -12,7 +12,13 @@ async function LeagueUpcomingsMatchesPage({ params }) {
 
   return (
     <section className='container mx-auto px-2 lg:px-0 py-8'>
-      <ListOfFixture results={nextGames} />
+      {nextGames.length === 0 ? (
+        <p className="text-center text-lg py-10">
+          There are not more games to play, the competition is over.
+        </p>
+      ):(
+        <ListOfFixture results={nextGames} />
+      )}
     </section>
   )
 }
