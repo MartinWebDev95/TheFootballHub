@@ -27,6 +27,7 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
             height={24} 
             src={item.logo} 
             alt={item.alt}
+            className='aspect-square'
           />
 
           {item.name}
@@ -40,12 +41,22 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
           <li className='lg:hidden'>
             <button 
               type='button' 
-              className='flex items-center gap-4 w-full px-4 py-4'
+              className='flex items-center gap-2 w-full px-4 py-4'
               onClick={() => setSubmenuActive(null)}
             >
               <ArrowIcon direction="left" />
 
-              {item.submenu.menu}
+              <div className='flex items-center gap-2'>
+                <Image 
+                  width={24} 
+                  height={24} 
+                  src={item.logo} 
+                  alt={item.alt}
+                  className='aspect-square'
+                />
+
+                {item.submenu.menu}
+              </div>
             </button>
           </li>
 
