@@ -89,7 +89,7 @@ const Fixture = ({ item }) => {
           height={30} 
           src={item.league.logo} 
           alt={item.league.name}
-          className={`${(item.league.name === 'UEFA Champions League') && 'bg-white rounded-full'}`}
+          className={`${(item.league.name === 'UEFA Champions League') && 'bg-white rounded-full'} w-auto h-auto`}
         />
 
         <p>{item.league.name}</p>
