@@ -1,13 +1,13 @@
 'use client'
 
 import { useState } from 'react';
-import Fixture from './Fixture'
-import { getMatchDate } from '@/utils/getMatchDate';
+import Fixture from './Fixture';
+import { groupedByRoundOrMonth } from '@/utils/groupedByRoundOrMonth';
 
 const ListOfFixture = ({ results, resultsByTeam = false }) => {
   const gamesByMatchweek = resultsByTeam 
-    ? Object.groupBy(results, (result) => getMatchDate({ matchDate: result.fixture.date }).dateMonth)
-    : Object.groupBy(results, (game) => game.league.round);
+    ? groupedByRoundOrMonth({ data: results, key: 'month' })
+    : groupedByRoundOrMonth({ data: results, key: 'round' });
 
   const [filteredFixtures, setFilteredFixtures] = useState(null);
   
