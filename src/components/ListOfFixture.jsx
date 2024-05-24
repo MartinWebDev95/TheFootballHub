@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import Fixture from './Fixture';
-import { groupedByRoundOrMonth } from '@/utils/groupedByRoundOrMonth';
+import { groupedBy } from '@/utils/groupedBy';
 
 const ListOfFixture = ({ results, resultsByTeam = false }) => {
   const gamesByMatchweek = resultsByTeam 
-    ? groupedByRoundOrMonth({ data: results, key: 'month' })
-    : groupedByRoundOrMonth({ data: results, key: 'round' });
+    ? groupedBy({ data: results, key: 'month' })
+    : groupedBy({ data: results, key: 'round' });
 
   const [filteredFixtures, setFilteredFixtures] = useState(null);
   

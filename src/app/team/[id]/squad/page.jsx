@@ -1,4 +1,5 @@
 import { getTeamSquad } from '@/lib/getData';
+import { groupedBy } from '@/utils/groupedBy';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,7 +13,7 @@ async function SquadPage({ params }){
   const squadTeam = await getTeamSquad({ idTeam: id });
 
   //Group the football squad array by the players positions
-  const squadByPositions = Object.groupBy(squadTeam, (player) => player.position)
+  const squadByPositions = groupedBy({ data: squadTeam, key: 'position' });
 
   return (
     <section className='container mx-auto px-2 lg:px-0 py-8'>
