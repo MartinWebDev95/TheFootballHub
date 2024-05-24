@@ -3,9 +3,10 @@
 import Match from './Match'
 import CarouselButton from './CarouselButton';
 import useSlider from '@/hooks/useSlider';
+import { groupedBy } from '@/utils/groupedBy';
 
 const Carousel = ({ matches }) => {
-  const gamesByMatchweek = Object.groupBy(matches, (game) => game.league.round);
+  const gamesByMatchweek = groupedBy({ data: matches, key: 'round' });
   const getResultsLastMatchweek = Object.entries(gamesByMatchweek)[
     Object.entries(gamesByMatchweek).length - 1
   ];
