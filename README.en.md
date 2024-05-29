@@ -1,17 +1,17 @@
-[Button Language]: https://img.shields.io/badge/Read%20In%20English-000000?style=for-the-badge
+[Button Language]: https://img.shields.io/badge/Leer%20En%20Español-000000?style=for-the-badge
 
-[![Button Language]](https://github.com/MartinWebDev95/TheFootballHub/blob/main/README.en.md)
+[![Button Language]](https://github.com/MartinWebDev95/TheFootballHub/blob/main/README.md)
 
 # The Football Hub                                
 ---
 
 [The Football Hub]: https://img.shields.io/badge/The%20Football%20Hub-005C0B?style=for-the-badge
 
-Proyecto que consiste en mostrar datos sobre equipos y jugadores de fútbol de la liga española, inglesa y la champions league.
+Project that consist in display data about football teams and football players of the spanish league, english league and champions league.
 
 [![The Football Hub]](https://the-football-hub.vercel.app/)
 
-## 👨🏽‍💻 ¿Qué tecnologías he utilizado?
+## 👨🏽‍💻 What technologies have I used?
 ---
 
 [Button Vercel]: https://img.shields.io/badge/Deploy%20on%20Vercel-000000?style=for-the-badge&logo=vercel
@@ -22,13 +22,13 @@ Proyecto que consiste en mostrar datos sobre equipos y jugadores de fútbol de l
 [![Button Tailwind]](https://tailwindcss.com/docs/installation)
 [![Button Vercel]](https://vercel.com/)
 
-- **Next JS:** He utilizado NextJS como el framework principal del proyecto. NextJS es un framework de React para crear aplicaciones web full-stack. Utiliza React Components para crear interfaces de usuario y NextJS para funciones y optimizaciones adicionales. Next.js también abstrae y configura automáticamente las herramientas necesarias para React, como empaquetamiento, compilación y algunas más. Esto permite concentrarse en crear la aplicación en lugar de dedicar tiempo a la configuración. Next.js te ayuda a crear aplicaciones de React interactivas, dinámicas y rápidas.
+- **Next JS:** I have used Next.js that is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations. Under the hood, Next.js also abstracts and automatically configures tooling needed for React, like bundling, compiling, and more. This allows you to focus on building your application instead of spending time with configuration. Whether you're an individual developer or part of a larger team, Next.js can help you build interactive, dynamic, and fast React applications.
 
-- **Tailwind CSS:** He usado TailwindCSS para darle estilos a los diferentes componentes.
+- **Tailwind CSS:** I have used TailwindCSS to style the different components.
 
-- **API:** He utilizado la API de [API-Football](https://www.api-football.com/documentation-v3) para obtener toda la información de los equipos, ligas y jugadores.
+- **API:** I have used the [API-Football](https://www.api-football.com/documentation-v3) API to get all the information about teams, leagues and players.
 
-## 📸 Algunas capturas del proyecto!
+## 📸 Some Screenshots!
 ---
 
 ![Home Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/homePage.png)
@@ -41,10 +41,10 @@ Proyecto que consiste en mostrar datos sobre equipos y jugadores de fútbol de l
 
 ![Top Scorers Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/topScorersPage.png)
 
-## 🗃️ Estructura del proyecto
+## 🗃️ Project Structure
 ---
 
-Esta es la estructura que he utilizado en este proyecto:
+This is the structure that I have used in this project:
 
 ```
 /
@@ -72,9 +72,9 @@ Esta es la estructura que he utilizado en este proyecto:
 └── package.json
 ```
 
-## 👀 ¿Dónde puedes encontrarme?
+## 👀 Where you can find me?
 ---
 
-[Button Portfolio]: https://img.shields.io/badge/Visita%20mi%20Portfolio-000000?style=for-the-badge
+[Button Portfolio]: https://img.shields.io/badge/Visit%20my%20Portfolio-000000?style=for-the-badge
 
 [![Button Portfolio]](https://portfolio-martinwebdev95.vercel.app/)
