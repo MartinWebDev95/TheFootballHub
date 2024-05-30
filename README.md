@@ -31,15 +31,15 @@ Proyecto que consiste en mostrar datos sobre equipos y jugadores de fútbol de l
 ## 📸 Algunas capturas del proyecto!
 ---
 
-![Home Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/homePage.png)
+![Home Page Screenshot](https://github.com/MartinWebDev95/TheFootballHub/blob/main/public/assets/screenshots/homePage.png)
 
-![Standing Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/standingPage.png)
+![Standing Page Screenshot](https://github.com/MartinWebDev95/TheFootballHub/blob/main/public/assets/screenshots/standingPage.png)
 
-![Results Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/resultsPage.png)
+![Results Page Screenshot](https://github.com/MartinWebDev95/TheFootballHub/blob/main/public/assets/screenshots/resultsPage.png)
 
-![Upcoming Matches Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/upcomingMatchesPage.png)
+![Upcoming Matches Screenshot](https://github.com/MartinWebDev95/TheFootballHub/blob/main/public/assets/screenshots/upcomingMatchesPage.png)
 
-![Top Scorers Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/topScorersPage.png)
+![Top Scorers Page Screenshot](https://github.com/MartinWebDev95/TheFootballHub/blob/main/public/assets/screenshots/topScorersPage.png)
 
 ## 🗃️ Estructura del proyecto
 ---
