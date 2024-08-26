@@ -17,7 +17,7 @@ const Carousel = ({ matches }) => {
     <>
       <div 
         ref={carouselRef} 
-        className="flex items-center w-full text-white"
+        className="flex items-center w-full text-yellow"
         onMouseEnter={() => setIsEnter(true)} 
         onMouseLeave={() => setIsEnter(false)}
       >

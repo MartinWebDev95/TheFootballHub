@@ -23,7 +23,7 @@ const ScorersTable = ({ scorers }) => {
             </td>
 
             <td className='text-sm md:text-base lg:pl-24'>
-              <Link href={`/player/${scorer.player.id}`} className='hover:text-sanfelix-400 transition-all ease-in-out duration-200 flex items-center gap-4 w-fit'>
+              <Link href={`/player/${scorer.player.id}`} className='hover:text-purple transition-all ease-in-out duration-200 flex items-center gap-4 w-fit'>
                 <Image 
                   width={45}
                   height={45} 
@@ -39,7 +39,7 @@ const ScorersTable = ({ scorers }) => {
             <td className='text-sm md:text-base lg:pl-24'>
               <Link 
                 href={`/team/${scorer.statistics[0].team.id}/squad`} 
-                className='hover:text-sanfelix-400 transition-all ease-in-out duration-200 flex items-center gap-4 w-fit'
+                className='hover:text-purple transition-all ease-in-out duration-200 flex items-center gap-4 w-fit'
               >
                 <Image 
                   width={35}

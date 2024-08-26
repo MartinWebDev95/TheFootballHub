@@ -28,9 +28,9 @@ const LeagueHero = ({ infoLeague }) => {
   ];
 
   return (
-    <section className="h-[calc(70vh-3.5rem)] bg-gradient-to-b from-sanfelix-800 to-sanfelix-950 to-75% shadow-xl border-b-2 border-sanfelix-400">
+    <section className="h-[calc(70vh-3.5rem)] bg-gradient-to-b from-gray to-black to-75% shadow-xl border-b-2 border-yellow">
       <div className="container mx-auto px-2 lg:px-0 flex flex-col justify-end h-full z-20">
-        <h1 className="flex flex-col lg:flex-row items-center lg:justify-start justify-center gap-6 uppercase text-4xl md:text-5xl lg:text-6xl font-bold text-white w-full text-center h-full">
+        <h1 className="flex flex-col lg:flex-row items-center lg:justify-start justify-center gap-6 uppercase text-4xl md:text-5xl lg:text-6xl font-bold text-ivory w-full text-center h-full">
           <Image
             width={100}
             height={100}

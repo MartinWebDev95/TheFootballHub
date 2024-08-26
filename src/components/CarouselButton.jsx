@@ -11,7 +11,7 @@ const CarouselButton = ({ idButton }) => {
   return (
     <button 
       type="button" 
-      className="group transition-all ease-in-out duration-300 rounded-full data-[selected=true]:bg-sanfelix-50 data-[selected=false]:bg-transparent"
+      className="group transition-all ease-in-out duration-300 rounded-full data-[selected=true]:bg-yellow data-[selected=false]:bg-transparent"
       data-id={idButton}
       data-match={idButton + 1}
       data-selected="false"

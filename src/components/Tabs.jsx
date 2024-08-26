@@ -12,7 +12,7 @@ const Tabs = ({ tabsList }) => {
         <li key={item.name} className='group'>
           <Link 
             href={item.href}
-            className={`bg-black px-8 py-4 md:px-6 lg:px-4 border-r-2 border-sanfelix-400 flex items-center gap-3 group-last:border-0 group-hover:text-sanfelix-400 transition-all ease-in-out duration-200 ${pathname === item.href ? 'text-sanfelix-400' : 'text-sanfelix-50'}`}
+            className={`bg-gray px-8 py-4 md:px-6 lg:px-4 border-r-2 border-yellow flex items-center gap-3 group-last:border-0 group-hover:text-purple transition-all ease-in-out duration-200 ${pathname === item.href ? 'text-purple' : 'text-yellow'}`}
           >
             {item.icon}
 

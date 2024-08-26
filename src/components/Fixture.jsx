@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Fixture = ({ item }) => {
   return (
-    <li className={`${item.league.name === 'UEFA Champions League' ? 'relative bg-[url("/assets/champions-banner.webp")] bg-no-repeat bg-cover after:absolute after:top-0 after:left-0 after:bg-black/80 after:rounded-md after:w-full after:h-full after:-z-10 z-20' : 'bg-black'} p-4 rounded-md shadow-lg w-full`}>
+    <li className={`${item.league.name === 'UEFA Champions League' ? 'relative bg-[url("/assets/champions-banner.webp")] bg-no-repeat bg-cover after:absolute after:top-0 after:left-0 after:bg-black/80 after:rounded-md after:w-full after:h-full after:-z-10 z-20' : 'bg-gray'} p-4 rounded-md shadow-lg w-full`}>
       <div className='flex items-center justify-between gap-4'>
         <div className={`w-full border-r ${item.league.name === 'UEFA Champions League' ? 'border-white' : 'border-sanfelix-400'} pr-4`}>
           <div className='flex items-center justify-between gap-2 mb-2'>
@@ -16,7 +16,7 @@ const Fixture = ({ item }) => {
                 alt={item.teams.home.name}
               />
 
-              <Link href={`/team/${item.teams.home.id}/squad`} className='hover:text-sanfelix-400 transition-all duration-200 ease-in-out'>
+              <Link href={`/team/${item.teams.home.id}/squad`} className='hover:text-purple transition-all duration-200 ease-in-out'>
                 {item.teams.home.name}
               </Link>
             </div>
@@ -45,7 +45,7 @@ const Fixture = ({ item }) => {
                 alt={item.teams.away.name}
               />
 
-              <Link href={`/team/${item.teams.away.id}/squad`} className='hover:text-sanfelix-400 transition-all duration-200 ease-in-out'>
+              <Link href={`/team/${item.teams.away.id}/squad`} className='hover:text-purple transition-all duration-200 ease-in-out'>
                 {item.teams.away.name}
               </Link>
             </div>

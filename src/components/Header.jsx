@@ -175,7 +175,7 @@ const Header = () => {
   }, [pathname])
 
   return (
-    <header className='w-full bg-sanfelix-900 shadow-xl h-12 lg:h-fit'>
+    <header className='w-full bg-gray shadow-xl h-12 lg:h-fit text-yellow'>
       <div className='container mx-auto px-2 lg:px-0 flex items-center justify-between gap-2 h-full'>
         <HomeLink />
 
@@ -187,7 +187,7 @@ const Header = () => {
 
         <nav 
           aria-hidden={isMenuHidden} 
-          className='w-full lg:w-fit absolute lg:static h-full lg:h-fit bg-sanfelix-900 lg:bg-transparent top-12 left-0 aria-[hidden=true]:translate-x-full aria-[hidden=false]:translate-x-0 lg:aria-[hidden=true]:translate-x-0 transition-transform ease-in-out duration-200 z-30'
+          className='w-full lg:w-fit absolute lg:static h-full lg:h-fit bg-gray lg:bg-transparent top-12 left-0 aria-[hidden=true]:translate-x-full aria-[hidden=false]:translate-x-0 lg:aria-[hidden=true]:translate-x-0 transition-transform ease-in-out duration-200 z-30'
         >
           <ul className='flex flex-col items-start lg:flex-row lg:items-center lg:gap-8'>
             {navLinks.map((item) => (

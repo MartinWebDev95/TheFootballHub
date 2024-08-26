@@ -37,7 +37,7 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
       </button>
 
       {item.submenu && (
-        <ul className={`absolute h-full w-full lg:h-fit lg:w-52 top-0 lg:top-14 left-0 bg-sanfelix-900 lg:rounded-b-md lg:shadow-xl ${submenuActive === item.submenu.menu ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} lg:scale-y-0 lg:origin-top lg:group-hover:scale-y-100 transition-transform ease-in-out duration-300 lg:overflow-hidden`}>
+        <ul className={`absolute h-full w-full lg:h-fit lg:w-52 top-0 lg:top-14 left-0 bg-gray lg:rounded-b-md lg:shadow-xl ${submenuActive === item.submenu.menu ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} lg:scale-y-0 lg:origin-top lg:group-hover:scale-y-100 transition-transform ease-in-out duration-300 lg:overflow-hidden`}>
           <li className='lg:hidden'>
             <button 
               type='button' 
@@ -62,7 +62,7 @@ const NavItem = ({ item, submenuActive, setSubmenuActive }) => {
 
           {item.submenu.submenuList.map((submenuItem) => (
             <li key={submenuItem.name} className='border-t-2 border-sanfelix-200 last-of-type:border-b-2 lg:border-none'>
-              <Link href={submenuItem.href} className='p-3 w-full flex items-center gap-2 hover:bg-sanfelix-700 transition-all ease-in-out duration-200'>
+              <Link href={submenuItem.href} className='p-3 w-full flex items-center gap-2 hover:bg-black hover:text-purple transition-all ease-in-out duration-200'>
                 {submenuItem.icon}
                 
                 <span className='lg:text-sm'>

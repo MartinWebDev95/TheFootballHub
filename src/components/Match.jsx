@@ -5,7 +5,7 @@ const Match = ({ match, matchRef, idMatch }) => {
     <div ref={matchRef} data-id={idMatch} aria-hidden="true" className="flex items-center justify-around min-w-full py-4 px-2 md:px-0">
       <MatchTeam team={match.teams.home} />
 
-      <div className="w-full">
+      <div className="w-full text-yellow">
         <p className="text-center mb-1 text-sm">{match.fixture.venue.name}</p>
         <div className="text-4xl flex justify-center items-center gap-2">
           <p className={`${match.goals.home > match.goals.away ? 'font-bold' : 'font-normal'} flex items-center gap-2`}>
@@ -18,7 +18,7 @@ const Match = ({ match, matchRef, idMatch }) => {
             {match.goals.home}
           </p>
 
-          <p className="font-bold text-cyan-600">
+          <p className="font-bold text-yellow">
             -
           </p>
 

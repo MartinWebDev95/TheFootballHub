@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const StandingTableChampions = ({ nameGroup }) => {
   return (
-    <table className="relative table-auto border-separate border-spacing-2 bg-[url('/assets/champions-banner.webp')] bg-no-repeat bg-cover rounded-md shadow-lg p-3 after:absolute after:top-0 after:left-0 after:bg-black/80 after:rounded-md after:w-full after:h-full after:-z-10 z-20">
+    <table className="relative table-auto border-separate border-spacing-2 bg-[url('/assets/champions-banner.webp')] bg-no-repeat bg-cover rounded-md shadow-lg p-3 after:absolute after:top-0 after:left-0 after:bg-black/70 after:rounded-md after:w-full after:h-full after:-z-10 z-20">
       <thead>
         <tr>
           <th></th>
@@ -24,7 +24,7 @@ const StandingTableChampions = ({ nameGroup }) => {
                 {item.rank}
               </td>
 
-              <td className='hover:text-sanfelix-400 transition-all ease-in-out duration-200'>
+              <td className='hover:text-purple transition-all ease-in-out duration-200'>
                 <Link 
                   href={`/team/${item.team.id.toString()}/squad`} 
                   className='flex items-center gap-1 justify-start'

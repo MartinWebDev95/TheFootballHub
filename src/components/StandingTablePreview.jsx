@@ -5,7 +5,7 @@ import Link from 'next/link'
 const StandingTablePreview = ({ standing, league }) => {
   return (
     <>
-      <table className="table-auto border-separate border-spacing-2 w-full h-full">
+      <table className="table-auto border-separate border-spacing-2 w-full h-full text-yellow">
         <caption className="caption-top font-semibold">
           {league.name}
         </caption>
@@ -28,7 +28,7 @@ const StandingTablePreview = ({ standing, league }) => {
                 <td className='text-center'>
                   {item.rank}
                 </td>
-                <td className='hover:text-sanfelix-400 transition-all ease-in-out duration-200'>
+                <td className='hover:text-purple transition-all ease-in-out duration-200'>
                   <Link 
                     href={`/team/${item.team.id.toString()}/squad`} 
                     className='flex items-center gap-1 justify-start'
@@ -57,7 +57,7 @@ const StandingTablePreview = ({ standing, league }) => {
           ? `/league/${getLeagueId({ leagueName: 'laliga' })}/standing` 
           : `/league/${getLeagueId({ leagueName: 'premierleague' })}/standing`
         } 
-        className='w-fit mt-2 font-bold text-sm md:text-base hover:text-sanfelix-400 transition-all ease-in-out duration-200'
+        className='w-fit mt-2 font-bold text-sm md:text-base text-yellow hover:text-purple transition-all ease-in-out duration-200'
       >
         See more
       </Link>

@@ -33,7 +33,7 @@ const StandingTable = ({ standing }) => {
               <td className='text-left'>
                 {item.rank}
               </td>
-              <td className='hover:text-sanfelix-400 transition-all ease-in-out duration-200'>
+              <td className='hover:text-purple transition-all ease-in-out duration-200'>
                 <Link 
                   href={`/team/${item.team.id.toString()}/squad`} 
                   className='flex items-center gap-3 justify-start'

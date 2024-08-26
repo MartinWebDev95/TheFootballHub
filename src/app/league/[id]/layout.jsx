@@ -11,7 +11,7 @@ export default async function LeagueLayout({ children, params }) {
   const infoLeague = await getStandingLeague({ idLeague: id });
 
   return (
-    <main className="w-full bg-sanfelix-950">
+    <main className="w-full bg-black">
       <LeagueHero infoLeague={infoLeague} />
 
       {children}
