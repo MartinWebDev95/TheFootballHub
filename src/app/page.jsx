@@ -25,7 +25,7 @@ export default async function HomePage() {
   return (
     <main className="w-full bg-black overflow-x-hidden">
       <div className="container mx-auto grid place-items-center px-2 lg:px-0">
-        <section className="grid grid-cols-1 auto-rows-min md:grid-cols-2 gap-y-8 md:gap-8 py-8 items-start lg:w-3/4">
+        <section className="grid grid-cols-1 auto-rows-min md:grid-cols-2 gap-y-8 md:gap-8 py-8 items-start w-full lg:w-3/4">
           <div className='bg-gray p-3 rounded-lg shadow-lg row-start-1 row-end-2 md:col-start-1 col-end-2 flex flex-col items-end h-full'>
             <StandingTablePreview 
               standing={standingsLaLiga.standings[0].filter((item) => item.rank <= 10)}
